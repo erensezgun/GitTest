@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         textLabelConstraint()
         textDicsConstraint()
         layoutDuzenle()
+        print("GitHub Üzerinden Değişiklik yapıldı.")
     }
 
     func textLabelConstraint() {
