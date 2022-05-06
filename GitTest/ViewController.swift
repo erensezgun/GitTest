@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     let erenImage : UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "eren"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        //imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 30.0
         //imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
@@ -38,12 +38,24 @@ class ViewController: UIViewController {
         return label
     }()
     
+    let textDics : UITextField = {
+        let field = UITextField()
+        //field.translatesAutoresizingMaskIntoConstraints = false
+        field.placeholder = "Acıklamayı Giriniz."
+        field.tintColor = .darkGray
+        field.textAlignment = .center
+        field.backgroundColor = .yellow
+        return field
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.addSubview(textLabel)
         view.addSubview(ustView)
+        view.addSubview(textDics)
         textLabelConstraint()
+        textDicsConstraint()
         layoutDuzenle()
     }
 
@@ -53,6 +65,14 @@ class ViewController: UIViewController {
         textLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
         textLabel.heightAnchor.constraint(equalToConstant: 150).isActive = true
         textLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    func textDicsConstraint() {
+        textDics.translatesAutoresizingMaskIntoConstraints = false
+        textDics.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        textDics.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+        textDics.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        //textDics.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        textDics.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 10).isActive = true
     }
     
     func layoutDuzenle() {
