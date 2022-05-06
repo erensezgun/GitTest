@@ -48,6 +48,16 @@ class ViewController: UIViewController {
         return field
     }()
     
+    let btnSayac : UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Button", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.backgroundColor = .black
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -57,6 +67,8 @@ class ViewController: UIViewController {
         textLabelConstraint()
         textDicsConstraint()
         layoutDuzenle()
+        view.addSubview(btnSayac)
+        buttonDuzenle()
         print("GitHub Üzerinden Değişiklik yapıldı.")
         print("GitHub üzerinden 2. değişiklik")
         print("xCode üzerinden değişlik yapıldı.")
@@ -94,6 +106,13 @@ class ViewController: UIViewController {
         //erenImage.topAnchor.constraint(equalTo: ustView.topAnchor, constant: 40).isActive = true
         
         }
+    
+    func buttonDuzenle() {
+        btnSayac.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+        btnSayac.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        btnSayac.topAnchor.constraint(equalTo: textDics.bottomAnchor, constant: 10).isActive = true
+        btnSayac.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
 
 }
 
