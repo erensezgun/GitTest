@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     let textLabel : UILabel = {
         let label = UILabel()
-        label.text = "Selam Dünya!"
+        label.text = "Hello World!"
         label.textColor = .black
         label.font = .boldSystemFont(ofSize: 50)
         label.textAlignment = .center
